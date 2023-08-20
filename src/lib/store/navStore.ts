@@ -6,8 +6,8 @@ interface NavStoreInterface {
 	set: (navState: boolean) => void;
 }
 
-function createNavStore(): NavStoreInterface {
-	const { subscribe, update, set } = writable<boolean>(true);
+function createNavStore(initVal: boolean): NavStoreInterface {
+	const { subscribe, update, set } = writable<boolean>(initVal);
 
 	return {
 		subscribe,
@@ -18,4 +18,5 @@ function createNavStore(): NavStoreInterface {
 	};
 }
 
-export const navOpenState = createNavStore();
+export const navOpenState = createNavStore(true);
+export const mobileNavOpenState = createNavStore(false);

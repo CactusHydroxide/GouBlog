@@ -11,14 +11,24 @@
     --color-800: #222236;
     --color-900: #1C1B2A;
 
-    /* Others */
-    /* todo: shadows */
-    --border-radius: 0.25em;
 
     /* Height & viewport */
     --header-height: 2.5em;
     --header-padding: 0.5em;
-    --page-container-height: calc(100vh - var(--header-height) - (var(--header-padding) * 2))
+    --page-container-height: calc(100vh - var(--header-height) - (var(--header-padding) * 2));
+
+    /* Breakpoints */
+    /* Used as reference for now since media querys cannot use variables */
+    --breakpoints-xs: 478px;
+    --breakpoints-sm: 768px;
+    --breakpoints-md: 1024px;
+    --breakpoints-lg: 1440px;
+    --breakpoints-xl: 1920px;
+
+    /* Others */
+    /* todo: shadows */
+    --border-radius: 0.25em;
+    --default-transition: all ease-out 200ms;
 }
 
 body{

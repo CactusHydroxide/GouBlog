@@ -26,16 +26,16 @@
 		align-items: center;
 		width: 100%;
 		font-size: 1em;
-		margin-bottom: 1em;
+		margin-bottom: 0.75em;
 		padding: 0.5em;
-		transition: all 250ms ease-out;
+		transition: var(--default-transition);
 	}
 	button.navButton.navItemOpen {
 		padding: 0.5em 1em;
 	}
 
 	button.navButton :global(span) {
-		transition: all 250ms ease-out;
+		transition: var(--default-transition);
 		padding-left: 0;
 		opacity: 0;
 		max-width: 0;
@@ -53,7 +53,7 @@
 	}
 
 	button.navButton.active {
-		background-color: var(--color-400);
+		background-color: var(--color-300);
 	}
 
 	li.bottom {
@@ -63,5 +63,12 @@
 
 	li.bottom button {
 		margin-bottom: 0;
+	}
+
+	/* mobile nav styling */
+	@media screen and (max-width: 768px) {
+		li.bottom {
+			display: none;
+		}
 	}
 </style>
