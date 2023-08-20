@@ -32,7 +32,7 @@
 					</NavButton>
 				{/each}
 				<NavButton {navOpenState} on:click={() => navOpenState.toggle()} bottom>
-					<IconArrowBadgeLeft />
+					<IconArrowBadgeLeft class={`minimisedIcon ${!$navOpenState && 'minimisedIconFlipped'}`} />
 					<span class:visible={$navOpenState}>Minimise</span>
 				</NavButton>
 			</ul>
@@ -75,6 +75,14 @@
 		list-style: none;
 		position: relative;
 		height: var(--page-container-height);
+	}
+
+	nav :global(.minimisedIcon) {
+		transition: all 250ms ease-out;
+	}
+
+	nav :global(.minimisedIconFlipped) {
+		transform: rotate(180deg);
 	}
 
 	.pageContainer {
