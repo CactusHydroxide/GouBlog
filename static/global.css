@@ -1,22 +1,35 @@
 :root {
-  --color-50: #F3F3F3;
-  --color-100: #AAAAC1;
-  --color-200: #8483A9;
-  --color-300: #646395;
-  --color-400: #504F7E;
-  --color-500: #3F3E6B;
-  --color-600: #32315B;
-  --color-700: #292946;
-  --color-800: #222236;
-  --color-900: #1C1B2A;
+    /* Colors */
+    --color-50: #F3F3F3;
+    --color-100: #AAAAC1;
+    --color-200: #8483A9;
+    --color-300: #646395;
+    --color-400: #504F7E;
+    --color-500: #3F3E6B;
+    --color-600: #32315B;
+    --color-700: #292946;
+    --color-800: #222236;
+    --color-900: #1C1B2A;
+
+    /* Others */
+    /* todo: shadows */
+    --border-radius: 0.25em;
+
+    /* Height & viewport */
+    --header-height: 2.5em;
+    --header-padding: 0.5em;
+    --page-container-height: calc(100vh - var(--header-height) - var(--header-padding))
 }
 
 body{
+    margin: 0;
     color: var(--color-50);
     background-color: var(--color-700);
     font-family: 'DM Sans', sans-serif;
-
-    h1, h2, h3, h4, h5, h6 {
-        font-family: Helvetica, sans-serif;
-    }
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, sans-serif;
+};
+
+/* todo: add sizing variables */
