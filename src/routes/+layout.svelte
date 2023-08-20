@@ -18,38 +18,30 @@
 	];
 </script>
 
-<div class="viewport">
-	<header>
-		<p>Gouba Blog Website Thingy</p>
-	</header>
-	<div class="bodyContainer">
-		<nav class:navOpen={$navOpenState}>
-			<ul>
-				{#each pageArr as { title, route, Icon }, index}
-					<NavButton {route} {navOpenState} on:click={() => goto(route)}>
-						<Icon />
-						<span class:visible={$navOpenState}>{title}</span>
-					</NavButton>
-				{/each}
-				<NavButton {navOpenState} on:click={() => navOpenState.toggle()} bottom>
-					<IconArrowBadgeLeft class={`minimisedIcon ${!$navOpenState && 'minimisedIconFlipped'}`} />
-					<span class:visible={$navOpenState}>Minimise</span>
+<header>
+	<p>Gouba Blog Website Thingy</p>
+</header>
+<div class="bodyContainer">
+	<nav class:navOpen={$navOpenState}>
+		<ul>
+			{#each pageArr as { title, route, Icon }, index}
+				<NavButton {route} {navOpenState} on:click={() => goto(route)}>
+					<Icon />
+					<span class:visible={$navOpenState}>{title}</span>
 				</NavButton>
-			</ul>
-		</nav>
-		<div class="pageContainer">
-			<slot />
-		</div>
+			{/each}
+			<NavButton {navOpenState} on:click={() => navOpenState.toggle()} bottom>
+				<IconArrowBadgeLeft class={`minimisedIcon ${!$navOpenState && 'minimisedIconFlipped'}`} />
+				<span class:visible={$navOpenState}>Minimise</span>
+			</NavButton>
+		</ul>
+	</nav>
+	<div class="pageContainer">
+		<slot />
 	</div>
 </div>
 
 <style>
-	.viewport {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
 	header {
 		height: var(--header-height);
 		padding: var(--header-padding);
@@ -59,14 +51,16 @@
 	}
 
 	.bodyContainer {
-		flex-grow: 1;
 		display: flex;
+		height: var(--page-container-height);
 	}
 
 	nav {
 		width: auto;
-		margin: 0.75em;
+		padding: 0.75em;
 		transition: width 200ms;
+		height: 100%;
+		box-sizing: border-box;
 	}
 
 	nav ul {
@@ -74,7 +68,7 @@
 		padding: 0;
 		list-style: none;
 		position: relative;
-		height: var(--page-container-height);
+		height: 100%;
 	}
 
 	nav :global(.minimisedIcon) {
@@ -86,7 +80,7 @@
 	}
 
 	.pageContainer {
-		display: inline-block;
-		flex-grow: 1;
+		overflow-y: scroll;
+		padding: 1em;
 	}
 </style>

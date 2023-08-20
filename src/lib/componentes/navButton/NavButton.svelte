@@ -58,6 +58,10 @@
 
 	li.bottom {
 		position: absolute;
-		bottom: 0.75em;
+		bottom: 0;
+	}
+
+	li.bottom button {
+		margin-bottom: 0;
 	}
 </style>

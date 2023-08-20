@@ -18,7 +18,7 @@
     /* Height & viewport */
     --header-height: 2.5em;
     --header-padding: 0.5em;
-    --page-container-height: calc(100vh - var(--header-height) - var(--header-padding))
+    --page-container-height: calc(100vh - var(--header-height) - (var(--header-padding) * 2))
 }
 
 body{
