@@ -1,9 +1,12 @@
 <script>
+	import CharacterCard from '$lib/componentes/CharacterCard.svelte';
 	import PageTitle from '$lib/componentes/PageTitle.svelte';
 </script>
 
 <PageTitle>this is a page</PageTitle>
 gridLayout
+
+<CharacterCard />
 <div class="characterCard">
 	<img src="https://cataas.com/cat/says/hehe?w=250&h=250" alt="character-name" />
 	<div class="characterLabel">

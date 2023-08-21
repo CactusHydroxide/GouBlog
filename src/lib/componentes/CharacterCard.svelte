@@ -1,10 +1,7 @@
-<script>
-	interface CharacterData {
-		name: string;
-		element: string;
+<script lang="ts">
+	interface CharacterCardProps extends CharacterData {
+		filteredOut``: boolean;
 	}
-
-	let characterData = {};
 </script>
 
 <div class="characterCard">

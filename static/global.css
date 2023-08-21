@@ -35,9 +35,9 @@ body{
     margin: 0;
     color: var(--color-50);
     background-color: var(--color-700);
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Helvetica, sans-serif;
+    font-weight: 800
 };

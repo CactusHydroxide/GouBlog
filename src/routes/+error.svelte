@@ -1,8 +1,7 @@
-<script>
+<script lang='ts'>
 	import { page } from '$app/stores';
 
 	$: err = { code: $page.status, message: $page.error?.message };
-	console.log($page);
 </script>
 
 <h1>Error {err.code}</h1>
