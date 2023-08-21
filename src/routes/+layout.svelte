@@ -4,6 +4,8 @@
 	import { IconArrowBadgeLeft, IconHome, IconMenu2, IconUser, IconX } from '@tabler/icons-svelte';
 	import NavButton from '$lib/componentes/NavButton.svelte';
 
+
+
 	const toggleMobileNav = () => {
 		mobileNavOpenState.toggle();
 		navOpenState.set(true);
