@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { navOpenState, mobileNavOpenState } from '../lib/store/navStore';
 	import { IconArrowBadgeLeft, IconHome, IconMenu2, IconUser, IconX } from '@tabler/icons-svelte';
-	import NavButton from '$lib/componentes/navButton/NavButton.svelte';
+	import NavButton from '$lib/componentes/NavButton.svelte';
 
 	const toggleMobileNav = () => {
 		mobileNavOpenState.toggle();
@@ -91,7 +91,7 @@
 
 	nav {
 		width: auto;
-		padding: 1em;
+		padding: 1rem;
 		transition: var(--default-transition);
 		height: 100%;
 	}
@@ -123,7 +123,7 @@
 
 		header :global(.hamburgerIcon) {
 			position: absolute;
-			font-size: 2em;
+			font-size: 2rem;
 			right: 0;
 			top: 50%;
 			transform: translateY(-50%);
@@ -146,20 +146,20 @@
 
 		nav {
 			height: 0;
-			padding: 0 1em;
+			padding: 0 1rem;
 			overflow-y: hidden;
 			width: 100%;
 		}
 
 		nav.mobileOpen {
 			height: var(--page-container-height);
-			padding: 1em;
+			padding: 1rem;
 		}
 	}
 
 	/* page */
 	.pageContainer {
 		overflow-y: scroll;
-		padding: 1em;
+		padding: 1rem;
 	}
 </style>

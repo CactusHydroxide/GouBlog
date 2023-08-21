@@ -21,17 +21,17 @@
 		display: flex;
 		background: none;
 		border: none;
-		border-radius: var(--border-radius);
+		border-radius: 50px;
 		color: var(--color-50);
 		align-items: center;
 		width: 100%;
-		font-size: 1em;
-		margin-bottom: 0.75em;
-		padding: 0.5em;
+		font-size: 1rem;
+		margin-bottom: 0.75rem;
+		padding: 0.5rem;
 		transition: var(--default-transition);
 	}
 	button.navButton.navItemOpen {
-		padding: 0.5em 1em;
+		padding: 0.5em 1rem;
 	}
 
 	button.navButton :global(span) {
@@ -42,9 +42,9 @@
 	}
 
 	button.navButton :global(span.visible) {
-		padding-left: 1em;
+		padding-left: 1rem;
 		opacity: 1;
-		max-width: 250px;
+		max-width: 125px;
 	}
 
 	button.navButton:hover {
