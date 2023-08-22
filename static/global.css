@@ -31,6 +31,10 @@
     --default-transition: all ease-out 200ms;
 
     /* Rarity Gradients */
+    --gradient-two:  radial-gradient(at bottom right, #3a7a77, #33405f);
+    --gradient-three:  radial-gradient(at bottom right, #35355f, #4276bf);
+    --gradient-four:  radial-gradient(at bottom right, #3f3b67, #8858cc);
+    --gradient-five:  radial-gradient(at bottom right, #7b524f, #cfa050);
 }
 
 body{

@@ -1,26 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { pageArr } from '../pageArray';
 	import { navOpenState, mobileNavOpenState } from '../lib/store/navStore';
-	import { IconArrowBadgeLeft, IconHome, IconMenu2, IconUser, IconX } from '@tabler/icons-svelte';
-	import NavButton from '$lib/componentes/NavButton.svelte';
+	import { IconArrowBadgeLeft, IconMenu2, IconX } from '@tabler/icons-svelte';
+	import NavButton from '$lib/components/NavButton.svelte';
 
 	const toggleMobileNav = () => {
 		mobileNavOpenState.toggle();
 		navOpenState.set(true);
 	};
 
-	const pageArr = [
-		{
-			title: 'Home',
-			route: '/',
-			Icon: IconHome
-		},
-		{
-			title: 'Characters',
-			route: '/characters',
-			Icon: IconUser
-		}
-	];
 </script>
 
 <header>
@@ -54,6 +43,7 @@
 				</NavButton>
 			{/each}
 			<NavButton {navOpenState} on:click={() => navOpenState.toggle()} bottom>
+				<!-- some reason this specific icon is TINY :( -->
 				<IconArrowBadgeLeft class={`minimisedIcon ${!$navOpenState && 'minimisedIconFlipped'}`} />
 				<span class:visible={$navOpenState}>Minimise</span>
 			</NavButton>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import CharacterCard from '$lib/componentes/CharacterCard.svelte';
-	import PageTitle from '$lib/componentes/PageTitle.svelte';
+	import CharacterCard from '$lib/components/CharacterCard.svelte';
+	import PageTitle from '$lib/components/PageTitle.svelte';
 	import type { CharacterOverview } from '../../definition';
 
 	const apiCharacterData: CharacterOverview[] = [

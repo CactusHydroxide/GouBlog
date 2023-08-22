@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import PageTitle from '$lib/componentes/PageTitle.svelte';
+	import PageTitle from '$lib/components/PageTitle.svelte';
 </script>
 
 <PageTitle>Welcome to SvelteKit</PageTitle>

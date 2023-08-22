@@ -7,8 +7,8 @@
 	$: imageSrc = imageUrl ? imageUrl : `https://cataas.com/cat/says/${name}?w=250&h=250`;
 </script>
 
-<div class="characterCard">
-	<img src={imageSrc} alt={name} />
+<div class="characterCard" on:click on:keydown role="button" tabindex={0}>
+	<img src={imageSrc} alt={name} class={rarity === 'four' ? 'four' : 'five'} />
 	<div class="characterLabel">
 		<h3>{name}</h3>
 		<p class="subheading">{dmgType}</p>
@@ -35,6 +35,13 @@
 		transition: all 100ms ease-out;
 		width: 100%;
 		object-fit: contain;
+	}
+
+	div.characterCard img.four {
+		background-image: var(--gradient-four);
+	}
+	div.characterCard img.five {
+		background-image: var(--gradient-five);
 	}
 
 	div.characterCard:hover img {
