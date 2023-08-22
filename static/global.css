@@ -29,6 +29,8 @@
     /* todo: shadows */
     --border-radius: 0.25rem;
     --default-transition: all ease-out 200ms;
+
+    /* Rarity Gradients */
 }
 
 body{

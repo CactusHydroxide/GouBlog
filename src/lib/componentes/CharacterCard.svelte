@@ -23,11 +23,22 @@
 		overflow: hidden;
 		border-radius: var(--border-radius) 45px var(--border-radius) var(--border-radius);
 		background-color: var(--color-500);
+		transition: all 100ms ease-out;
+	}
+
+	div.characterCard:hover {
+		background-color: var(--color-400);
+		transform: scale(105%);
 	}
 
 	div.characterCard img {
+		transition: all 100ms ease-out;
 		width: 100%;
 		object-fit: contain;
+	}
+
+	div.characterCard:hover img {
+		transform: scale(1.1);
 	}
 
 	.characterLabel {
