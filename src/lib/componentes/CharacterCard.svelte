@@ -1,15 +1,18 @@
 <script lang="ts">
-	interface CharacterCardProps extends CharacterData {
-		filteredOut``: boolean;
-	}
+	import type { CharacterOverview } from '../../definition';
+
+	export let characterOverview: CharacterOverview;
+	let { name, dmgType, path, rarity, imageUrl } = characterOverview;
+	//Image fallback
+	$: imageSrc = imageUrl ? imageUrl : `https://cataas.com/cat/says/${name}?w=250&h=250`;
 </script>
 
 <div class="characterCard">
-	<img src="https://cataas.com/cat/says/hehe?w=250&h=250" alt="character-name" />
+	<img src={imageSrc} alt={name} />
 	<div class="characterLabel">
-		<h3>Name</h3>
-		<p class="subheading">element</p>
-		<p class="subheading">path</p>
+		<h3>{name}</h3>
+		<p class="subheading">{dmgType}</p>
+		<p class="subheading">{path}</p>
 	</div>
 </div>
 
@@ -18,7 +21,7 @@
 		max-width: 200px;
 		overflow: hidden;
 		border-radius: var(--border-radius) 45px var(--border-radius) var(--border-radius);
-		border: solid black 1px;
+		background-color: var(--color-500);
 	}
 
 	div.characterCard img {

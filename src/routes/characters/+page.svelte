@@ -1,46 +1,91 @@
-<script>
+<script lang="ts">
 	import CharacterCard from '$lib/componentes/CharacterCard.svelte';
 	import PageTitle from '$lib/componentes/PageTitle.svelte';
+	import type { CharacterOverview } from '../../definition';
+
+	const apiCharacterData: CharacterOverview[] = [
+		{
+			name: 'Trailblazer',
+			dmgType: 'Physical',
+			path: 'Destruction',
+			rarity: 'five',
+			imageUrl:
+				'https://static.wikia.nocookie.net/houkai-star-rail/images/8/89/Character_Trailblazer_(Destruction)_Icon.png'
+		},
+		{
+			name: 'March 7th',
+			dmgType: 'Ice',
+			path: 'Preservation',
+			rarity: 'four',
+			imageUrl:
+				'https://static.wikia.nocookie.net/houkai-star-rail/images/d/d3/Character_March_7th_Icon.png'
+		},
+		{
+			name: 'Dan Heng',
+			dmgType: 'Wind',
+			path: 'Hunt',
+			rarity: 'four'
+		},
+		{
+			name: 'Welt',
+			dmgType: 'Imaginary',
+			path: 'Nihility',
+			rarity: 'five'
+		},
+		{
+			name: 'Himeko',
+			dmgType: 'Fire',
+			path: 'Erudition',
+			rarity: 'five',
+			imageUrl:
+				'https://static.wikia.nocookie.net/houkai-star-rail/images/0/00/Character_Himeko_Icon.png'
+		},
+		{
+			name: 'Herta',
+			dmgType: 'Ice',
+			path: 'Erudition',
+			rarity: 'four',
+			imageUrl:
+				'https://static.wikia.nocookie.net/houkai-star-rail/images/b/bf/Character_Herta_Icon.png'
+		}
+	];
 </script>
 
 <PageTitle>this is a page</PageTitle>
-gridLayout
 
-<CharacterCard />
-<div class="characterCard">
-	<img src="https://cataas.com/cat/says/hehe?w=250&h=250" alt="character-name" />
-	<div class="characterLabel">
-		<h3>Name</h3>
-		<p class="subheading">element</p>
-		<p class="subheading">path</p>
-	</div>
+<div class="cardContainer">
+	{#each apiCharacterData as characterOverview}
+		<CharacterCard {characterOverview} />
+	{/each}
 </div>
 
 <style>
-	div.characterCard {
-		max-width: 200px;
-		overflow: hidden;
-		border-radius: var(--border-radius) 45px var(--border-radius) var(--border-radius);
-		border: solid black 1px;
+	/* card grid */
+	.cardContainer {
+		display: flex;
+		direction: row;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: -1rem;
 	}
 
-	div.characterCard img {
-		width: 100%;
-		object-fit: contain;
+	.cardContainer > :global(*) {
+		margin: 1rem;
 	}
 
-	.characterLabel {
-		margin: 10px;
+	.cardContainer::after {
+		content: '';
+		flex: 1;
 	}
 
-	.characterLabel p,
-	.characterLabel h3 {
-		margin: 0;
-		margin-bottom: 5px;
-	}
+	/* mobile grid */
+	@media screen and (max-width: 768px) {
+		.cardContainer {
+			justify-content: space-evenly;
+		}
 
-	.characterLabel .subheading {
-		color: var(--color-100);
-		font-weight: 300;
+		.cardContainer::after {
+			display: none;
+		}
 	}
 </style>

@@ -4,8 +4,6 @@
 	import { IconArrowBadgeLeft, IconHome, IconMenu2, IconUser, IconX } from '@tabler/icons-svelte';
 	import NavButton from '$lib/componentes/NavButton.svelte';
 
-
-
 	const toggleMobileNav = () => {
 		mobileNavOpenState.toggle();
 		navOpenState.set(true);
@@ -161,7 +159,8 @@
 
 	/* page */
 	.pageContainer {
-		overflow-y: scroll;
+		overflow-y: auto;
 		padding: 1rem;
+		flex-grow: 2;
 	}
 </style>
