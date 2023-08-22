@@ -18,7 +18,8 @@
 
 <style>
 	div.characterCard {
-		max-width: 200px;
+		min-width: 100px;
+		max-width: 220px;
 		overflow: hidden;
 		border-radius: var(--border-radius) 45px var(--border-radius) var(--border-radius);
 		background-color: var(--color-500);
@@ -42,5 +43,30 @@
 	.characterLabel .subheading {
 		color: var(--color-100);
 		font-weight: 300;
+	}
+
+	/* layout sizing */
+	@media screen and (width < 1024px) {
+		div.characterCard {
+			font-size: 0.75rem;
+		}
+	}
+
+	@media screen and (690px < width < 768px) {
+		div.characterCard {
+			font-size: 1rem;
+		}
+	}
+
+	@media screen and (width > 920px) {
+		div.characterCard {
+			font-size: 0.9rem;
+		}
+	}
+
+	@media screen and (width > 1024px) {
+		div.characterCard {
+			font-size: 1rem;
+		}
 	}
 </style>

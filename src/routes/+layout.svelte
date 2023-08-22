@@ -60,7 +60,9 @@
 		</ul>
 	</nav>
 	<div class="pageContainer">
-		<slot />
+		<div class="pageWidthWrapper">
+			<slot />
+		</div>
 	</div>
 </div>
 
@@ -162,5 +164,9 @@
 		overflow-y: auto;
 		padding: 1rem;
 		flex-grow: 2;
+	}
+
+	.pageWidthWrapper {
+		max-width: var(--breakpoints-xl);
 	}
 </style>

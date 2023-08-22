@@ -49,12 +49,19 @@
 				'https://static.wikia.nocookie.net/houkai-star-rail/images/b/bf/Character_Herta_Icon.png'
 		}
 	];
+
+	$: characterDataArr = [
+		...apiCharacterData,
+		...apiCharacterData,
+		...apiCharacterData,
+		...apiCharacterData
+	];
 </script>
 
 <PageTitle>this is a page</PageTitle>
 
 <div class="cardContainer">
-	{#each apiCharacterData as characterOverview}
+	{#each characterDataArr as characterOverview}
 		<CharacterCard {characterOverview} />
 	{/each}
 </div>
@@ -62,30 +69,44 @@
 <style>
 	/* card grid */
 	.cardContainer {
-		display: flex;
-		direction: row;
-		align-items: center;
-		flex-wrap: wrap;
-		margin: -1rem;
+		display: grid;
+		grid-template-columns: repeat(3, 0.9fr);
+		grid-template-rows: repeat(6, auto);
+		margin: -0.5rem;
 	}
 
 	.cardContainer > :global(*) {
-		margin: 1rem;
+		margin: 0.5rem;
 	}
 
-	.cardContainer::after {
-		content: '';
-		flex: 1;
-	}
-
-	/* mobile grid */
-	@media screen and (max-width: 768px) {
+	/* media query */
+	@media screen and (min-width: 478px) {
 		.cardContainer {
-			justify-content: space-evenly;
+			grid-template-columns: repeat(4, 0.9fr);
 		}
-
-		.cardContainer::after {
-			display: none;
+	}
+	@media screen and (min-width: 768px) {
+		.cardContainer {
+			grid-template-columns: repeat(5, 0.9fr);
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		.cardContainer {
+			grid-template-columns: repeat(6, 0.9fr);
+		}
+	}
+	@media screen and (min-width: 1440px) {
+		.cardContainer {
+			grid-template-columns: repeat(8, 0.9fr);
+			margin: -0.8vw;
+		}
+		.cardContainer > :global(*) {
+			margin: 0.8vw;
+		}
+	}
+	@media screen and (min-width: 1920px) {
+		.cardContainer {
+			grid-template-columns: repeat(9, 0.9fr);
 		}
 	}
 </style>
