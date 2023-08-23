@@ -2,6 +2,7 @@
 	import CharacterCard from '$lib/components/CharacterCard.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import type { CharacterOverview } from '../../definition';
+	import { goto } from '$app/navigation';
 
 	const apiCharacterData: CharacterOverview[] = [
 		{
@@ -62,7 +63,7 @@
 
 <div class="cardContainer">
 	{#each characterDataArr as characterOverview}
-		<CharacterCard {characterOverview} />
+		<CharacterCard {characterOverview} on:click={()=> goto(`/characters/${characterOverview.name}`)} />
 	{/each}
 </div>
 

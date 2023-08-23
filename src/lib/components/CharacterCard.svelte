@@ -8,7 +8,12 @@
 </script>
 
 <div class="characterCard" on:click on:keydown role="button" tabindex={0}>
-	<img src={imageSrc} alt={name} class={rarity === 'four' ? 'four' : 'five'} />
+	<img
+		loading="lazy"
+		src={imageSrc}
+		alt={name}
+		class={rarity}
+	/>
 	<div class="characterLabel">
 		<h3>{name}</h3>
 		<p class="subheading">{dmgType}</p>
