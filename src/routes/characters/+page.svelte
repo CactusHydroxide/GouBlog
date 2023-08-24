@@ -59,8 +59,7 @@
 	];
 </script>
 
-<PageTitle>this is a page</PageTitle>
-
+<PageTitle>Characters</PageTitle>
 <div class="cardContainer">
 	{#each characterDataArr as characterOverview}
 		<CharacterCard {characterOverview} on:click={()=> goto(`/characters/${characterOverview.name}`)} />

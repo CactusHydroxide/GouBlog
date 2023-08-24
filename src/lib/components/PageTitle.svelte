@@ -1,9 +1,10 @@
 <h1>
-    <slot/>
+	<slot />
 </h1>
 
 <style>
-    h1{
-        margin: 0.25rem 0;
-    }
+	h1 {
+		margin: 0;
+		margin-bottom: 1rem;
+	}
 </style>

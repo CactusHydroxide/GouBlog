@@ -1,6 +1,6 @@
 import { IconCards, IconHome, IconMoodSad, IconUser } from '@tabler/icons-svelte';
 
-export const pageArr = [
+export const navArray = [
 	{
 		title: 'Home',
 		route: '/',
@@ -13,7 +13,7 @@ export const pageArr = [
 	},
 	{
 		title: 'Light Cones',
-		route: '/light_cones',
+		route: '/lightcones',
 		Icon: IconCards
 	},
 	{

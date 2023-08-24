@@ -8,12 +8,7 @@
 </script>
 
 <div class="characterCard" on:click on:keydown role="button" tabindex={0}>
-	<img
-		loading="lazy"
-		src={imageSrc}
-		alt={name}
-		class={rarity}
-	/>
+	<img loading="lazy" src={imageSrc} alt={name} class={rarity} />
 	<div class="characterLabel">
 		<h3>{name}</h3>
 		<p class="subheading">{dmgType}</p>
@@ -38,6 +33,7 @@
 
 	div.characterCard img {
 		transition: all 100ms ease-out;
+		aspect-ratio: 1;
 		width: 100%;
 		object-fit: contain;
 	}

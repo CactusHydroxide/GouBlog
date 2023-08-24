@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { pageArr } from '../pageArray';
+	import { navArray } from './navArray';
 	import { navOpenState, mobileNavOpenState } from '../lib/store/navStore';
 	import { IconArrowBadgeLeft, IconMenu2, IconX } from '@tabler/icons-svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
@@ -29,7 +29,7 @@
 <div class="bodyContainer">
 	<nav class:navOpen={$navOpenState} class:mobileOpen={$mobileNavOpenState}>
 		<ul>
-			{#each pageArr as { title, route, Icon }, index}
+			{#each navArray as { title, route, Icon }, index}
 				<NavButton
 					{route}
 					{navOpenState}
